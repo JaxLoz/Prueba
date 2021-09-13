@@ -11,4 +11,23 @@ package matrices;
  */
 public class sd {
     
+    private int [][] matriz;
+    
+    public sd (int Nfilas, int Ncol){
+        
+        this.matriz = new int [Nfilas][Ncol];
+        
+    }
+    
+    public void setMatriz (int i, int j, int info){
+        
+        this.matriz[i][j] = info;
+    }
+    
+    public int getMatriz (int i, int j){
+        
+        return matriz[i][j];
+      
+    }
+    
 }
