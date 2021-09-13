@@ -23,8 +23,12 @@ public class Matrices {
     public static void main(String[] args) {
         // TODO code application logic here
         
-        int Nfilas = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el numero de filas"));;
-        int Ncol = Integer.parseInt(JOptionPane.showInputDialog("ingrese el numero de columnas"));
+        Vista run = new Vista();
+        run.setVisible(true);
+        
+        /*
+        int Nfilas = Integer.parseInt(JOptionPane.showInputDialog(null,"Ingrese el numero de filas"));
+        int Ncol = Integer.parseInt(JOptionPane.showInputDialog(null,"ingrese el numero de columnas"));
         
         sd matriz = new sd(Nfilas, Ncol);
         
@@ -39,14 +43,16 @@ public class Matrices {
             }  
         }
         
-        System.out.println("Informacion de la Matriz:");
+        JOptionPane.showMessageDialog(null, "La matriz contiene la siguiente informacion"+"\n", "Informacion de la matriz", Nfilas);
         for (int i = 0; i < Nfilas; i++){
             for (int j = 0; j < Ncol; j++){
                 
-                System.out.println(matriz.getMatriz(i, j));
+              JOptionPane.showMessageDialog(null, matriz.getMatriz(i, j), "Informacion de la Matriz", Nfilas);
+                
+              
                 
             }
-        }
+        }*/
         
         
     }

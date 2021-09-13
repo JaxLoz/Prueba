@@ -12,6 +12,8 @@ package matrices;
 public class sd {
     
     private int [][] matriz;
+    private int filas;
+    private int colum;
     
     public sd (int Nfilas, int Ncol){
         
