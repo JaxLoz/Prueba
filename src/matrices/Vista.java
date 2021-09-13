@@ -203,15 +203,7 @@ public class Vista extends javax.swing.JFrame {
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
         // TODO add your handling code here:ma
 
-        for (int i = 0; i < Nfila; i++){
-            for (int j = 0; j < Ncol; j++){
-                
-                int Dato = Integer.parseInt(txtDato.getText());
-                //txtDato.setText("");
-                matriz.setMatriz(i, j, Dato);
-                lblPos.setText("("+(Nfila)+","+(Ncol)+")");
-            }
-        }
+      
   
     }//GEN-LAST:event_btnGuardarActionPerformed
 
