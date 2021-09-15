@@ -20,6 +20,8 @@ public class Vista extends javax.swing.JFrame {
      sd matriz;
      int Nfila;
      int Ncol;
+     int Posi = 0;
+     int Posj = 0;
     
     public Vista() {
         initComponents();
@@ -88,8 +90,6 @@ public class Vista extends javax.swing.JFrame {
                 btnMostrarActionPerformed(evt);
             }
         });
-
-        lblPos.setText("jLabel2");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -174,7 +174,7 @@ public class Vista extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(306, Short.MAX_VALUE))
+                .addContainerGap(338, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -199,34 +199,34 @@ public class Vista extends javax.swing.JFrame {
         
         matriz = new sd(Nfila,Ncol);
         lblDim.setText("El tamaño de la matriz es de: "+Nfila+"x"+Ncol);
+        txtFilas.setEditable(false);
+        txtCol.setEditable(false);
         
     }//GEN-LAST:event_btnDimensionarActionPerformed
 
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
         // TODO add your handling code here:ma
 
-      int Posi = 0;
-      int Posj = 0;
-      
       int Dato = Integer.parseInt(txtDato.getText());
+    
+       matriz.setMatriz(Posi, Posj, Dato);
       
-      if (Posj == Ncol-1){
-          
-          Posi++;
-          Posj = 0;
-          
-      }
+       Posj++;
+       
+        lblPos.setText(Dato+" se ingreso en: "+"["+(Posi+1)+","+(Posj)+"]");
+        txtDato.setText("");
+        
+        if (Posj == Ncol){
+            
+            Posj = 0;
+            Posi++;
+        }
       
-      if (Posi == Nfila-1){
+       if (Posi == Nfila-1 && Posj == Ncol){
           
         JOptionPane.showMessageDialog(null, "La matriz ha alcanzado su dimension, no puede seguir ingresadondo datos");
-        
+        txtDato.setEditable(false);
       }
-      
-      matriz.setMatriz(Posi, Posj, Dato);
-      lblPos.setText(Posi+","+Posj);
-      
-      
   
     }//GEN-LAST:event_btnGuardarActionPerformed
 
