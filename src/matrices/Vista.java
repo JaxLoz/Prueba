@@ -5,6 +5,8 @@
  */
 package matrices;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author javier
@@ -203,6 +205,27 @@ public class Vista extends javax.swing.JFrame {
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
         // TODO add your handling code here:ma
 
+      int Posi = 0;
+      int Posj = 0;
+      
+      int Dato = Integer.parseInt(txtDato.getText());
+      
+      if (Posj == Ncol-1){
+          
+          Posi++;
+          Posj = 0;
+          
+      }
+      
+      if (Posi == Nfila-1){
+          
+        JOptionPane.showMessageDialog(null, "La matriz ha alcanzado su dimension, no puede seguir ingresadondo datos");
+        
+      }
+      
+      matriz.setMatriz(Posi, Posj, Dato);
+      lblPos.setText(Posi+","+Posj);
+      
       
   
     }//GEN-LAST:event_btnGuardarActionPerformed
